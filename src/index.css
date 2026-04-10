@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "Changa", serif;
+  --color-primary: white;
+}
+
+@layer components {
+  .main {
+    @apply bg-linear-60 from-blue-950 to-mauve-950
+  }
+
+  .box {
+    @apply bg-cyan-950/65 text-primary;
+  }
+
+  .svg {
+    @apply rounded-3xl p-0.5 hover:bg-cyan-700/90 fill-white hover:shadow-md hover:shadow-cyan-300/20 cursor-pointer duration-200 active:inset-shadow-cyan-900 active:shadow-none active:bg-cyan-600/30;
+  }
+
+  .btn {
+    @apply text-primary font-primary bg-cyan-950/65 rounded hover:bg-cyan-900/20;
+  }
+
+  .small {
+    @apply text-lg px-4 py-2;
+  }
+
+  .medium {
+    @apply text-xl px-5 py-2.5;
+  }
+
+  .large {
+    @apply text-3xl px-7 py-3;
+  }
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}

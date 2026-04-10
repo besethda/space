@@ -1,0 +1,54 @@
+API KEY : B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV
+
+The plan is to have a homepage, with the picture of the day, and options of what the user wants to click on.
+I'll have a search bar that searches for images from the image endpoint. https://images-api.nasa.gov
+
+picture of the day endpoint: GET https://api.nasa.gov/planetary/apod 
+
+Ill have a subpage about the weather on mars. the api enpoint gives lots of details about it. GET https://api.nasa.gov/insight_weather/?api_key=DEMO_KEY&feedtype=json&ver=1.0
+Ill have another subpage with photos of mars from the video library endpoint. GET https://images-api.nasa.gov 
+
+I'll have an asteroid page with info about asteroids with the current date, and the search will become an asteroid search. The user should be able to search by date.
+The subpage will show the results from the search, and the user can click on an search item to read more..?
+
+The layout will be like this:
+
+Home- picture of the day 
+  search- a page that displays the relevant pictures, and the user can click to make it larger.
+
+mars - with pictures, and maybe a description/intro
+  weather on mars in a nice display
+
+asteroids - a page about asteroids. with another search function
+    search- a page that displays the relevant search info, and the user can click to make it larger.
+
+
+Components
+Header
+  Nav
+    NavItem
+  search (asteroid) - needs to have a date range option, and a link to the asteroidSearch
+  search (images) - needs to have a link to the imageDisplay page. 
+Footer
+icon
+any svgs (probably a search )
+
+
+Pages
+Home- image of the day, a little info about the website
+  imageDisplay- a place to show all the images, and click on a main photo to see it larger
+
+Mars- images of mars, a button to read more about the weather on mars. (no search option)
+  weather - a display of the current weather on mars using the endpoint. 
+
+asteroids- gives info about any current asteroids
+  asteroidSearch- displays any asteroid in the date range the user chooses, and the user can click on one to read more.
+
+
+Hooks
+a hook for the api request (hopefully can be used by any component, reusable.)
+
+
+Utils
+might need some for using array methods on the api returned data- for organizational purposes.
+might need some for getImageUrl if i have any local images (icon)
