@@ -26,6 +26,10 @@ const Search = ({setSearchQuery, data, setData, setSearchData}) => {
     setSearchDisplay(false)
     textBox.current.value = ''
     setData(null)
+    if(galleryView) {
+      setSearchData(null)
+      setGalleryView(false)
+    }
   }
 
   const createSearchData = (e) => {
@@ -40,7 +44,7 @@ const Search = ({setSearchQuery, data, setData, setSearchData}) => {
         <input ref={textBox} className="outline-0 duration-300 text-2xl p-0 m-0" style={{width: `${searchDisplay ? 165 : 0}px`}} placeholder="search..."/>
       </div>
       <SearchIcon size={searchDisplay ? 42 : 55} click={searchButton} />
-      {!galleryView && <Dropdown data={data} createSearchData={createSearchData} searchDisplay={searchDisplay} setGalleryView={setGalleryView}/>}
+      {!galleryView && <Dropdown data={data} createSearchData={createSearchData} searchDisplay={searchDisplay} setGalleryView={setGalleryView} textBox={textBox}/>}
     </div>
   );
 };

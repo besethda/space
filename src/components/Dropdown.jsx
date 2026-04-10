@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 
-const Dropdown = ({data, searchDisplay, createSearchData, setGalleryView}) => {
+const Dropdown = ({data, searchDisplay, createSearchData, setGalleryView, textBox}) => {
 
   const onGallery = () => {
     setGalleryView(true)
-
   }
 
   return (
@@ -15,7 +14,7 @@ const Dropdown = ({data, searchDisplay, createSearchData, setGalleryView}) => {
             <img src={`${e.links[0].href}`} className=" h-9/10 w-full object-cover overflow-y-hidden col-span-1"/>
             <div className="px-3 py-2 whitespace-nowrap overflow-hidden col-span-5" >{e.data[0].title}</div>
           </Link>)}
-        <Link to="/gallery" className="w-full text-center py-1 hover:bg-cyan-200/10 rounded-b-2xl cursor-pointer" onClick={onGallery}>See all</Link>
+        <Link to="/gallery" state={{title: `${textBox.current.value}`}} className="w-full py-1 rounded-b-2xl cursor-pointer text-center block hover:bg-cyan-200/10" onClick={onGallery}>See all</Link>
       </div>}
     </>
   );

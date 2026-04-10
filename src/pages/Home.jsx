@@ -3,7 +3,7 @@ import UseApi from "../hooks/useApi";
 
 const Home = () => {
 
-  const data = UseApi("https://api.nasa.gov/planetary/apod?api_key=B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV")
+  const [data, setData, loading] = UseApi("https://api.nasa.gov/planetary/apod?api_key=B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV")
   const [explanation, setExplanation] = useState(false)
 
   const toggleReadMore = () => {
@@ -12,11 +12,12 @@ const Home = () => {
 
   return (
     <div className="flex h-full main">
-        {data && <div className="w-full h-full overflow-hidden relative">
+        {data && !loading && <div className="w-full h-full overflow-hidden relative">
           {data.media_type === "video" ? <video src={`${data.url}`} typeof="video/mp4" autoPlay muted loop className="w-full h-full object-cover absolute z-0"/>
           : <img src={`${data.url}`} className="w-full h-full object-cover absolute"/>}
         </div>}
         <div className="z-3 absolute">
+          {loading && <div className="text-white px-3 py-2 max-w-48" >Loading Nasa picture of the day...</div>}
           <div className="text-white px-3 py-2 max-w-48">{data && data.date}</div>
           <div className="text-white px-3 py-0 max-w-48">{data && data.title}</div>
           {explanation
