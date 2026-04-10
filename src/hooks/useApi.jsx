@@ -16,10 +16,8 @@ const UseApi = (url) => {
         const result = await response.json()
         console.log(result)
         setData(result)
-
       } catch (error) {
           console.log(error)
-          setData(null)
       } finally {
           setLoading(false)
       }
