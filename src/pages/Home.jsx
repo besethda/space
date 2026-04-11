@@ -1,7 +1,8 @@
 import { useState } from "react";
 import UseApi from "../hooks/useApi";
+import Display from "../components/Display";
 
-const Home = () => {
+const Home = ({photoDisplay, setPhotoDisplay}) => {
 
   const [data, setData, loading] = UseApi("https://api.nasa.gov/planetary/apod?api_key=B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV")
   const [explanation, setExplanation] = useState(false)
@@ -29,7 +30,7 @@ const Home = () => {
             : !loading && data && <div className="text-white px-3 py-2 w-fit hover:scale-105 hover:translate-x-1 duration-150 hover:font-semibold cursor-pointer" onClick={toggleReadMore}>Read More</div>
             }
         </div>
-
+        {photoDisplay && <Display photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay} defaultTitle={"Home"}/>}
     </div>
   );
 };
