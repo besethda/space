@@ -11,13 +11,19 @@ const UseApi = (url) => {
         setLoading(true)
         let response = await fetch(url)
         if(!response.ok) {
-          throw new Error('error', response)
-        }
-        const result = await response.json()
-        console.log(result)
-        setData(result)
+          const errorData = await response.json()
+          throw new Error(errorData.error_message)
+        } 
+          const result = await response.json()
+          console.log(result)
+          setData(result)
       } catch (error) {
-          console.log(error)
+          console.log(error.message)
+          if(error.message.includes("Date Format Exception")) {
+            setData({error: "Must be less than 8 day range!"})
+          } else {
+            setData({error: error.message})
+          }
       } finally {
           setLoading(false)
       }

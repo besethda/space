@@ -20,7 +20,7 @@ const Header = ({setSearchData, photoDisplay, setPhotoDisplay}) => {
           <Logo size={55}/>
         </div>
         <div className="flex h-full w-full items-center justify-center col-span-3">
-          <div className="" >{title}</div>
+          <div className="font-semibold" >{title}</div>
         </div>
         <div className="flex h-full w-full items-center col-span-4 justify-end" >
           <Search setSearchQuery={setSearchQuery} data={data} setData={setData} setSearchData={setSearchData} photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay}/>
