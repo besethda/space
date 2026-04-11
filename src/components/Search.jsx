@@ -2,7 +2,6 @@ import SearchIcon from "./icons/searchIcon";
 import Close from "./icons/close";
 import Dropdown from "./Dropdown";
 import { useState, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import useUrlLocation from "../hooks/useUrlLocation";
 
 const Search = ({setSearchQuery, data, setData, setSearchData, photoDisplay, setPhotoDisplay}) => {
@@ -22,7 +21,7 @@ const Search = ({setSearchQuery, data, setData, setSearchData, photoDisplay, set
     } else {
       setSearchQuery(textBox.current.value)
       if(galleryView) {
-        updateUrl({title: textBox.current.value})
+        updateUrl({title: `Results for: ${textBox.current.value}`})
         setPhotoDisplay(null)
       }
     }

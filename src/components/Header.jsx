@@ -2,7 +2,7 @@ import Asteroid from "./icons/asteroid";
 import Mars from "./icons/mars";
 import Logo from "./icons/logo";
 import Search from "./Search";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import UseApi from "../hooks/useApi";
 import { useLocation } from "react-router-dom";
 

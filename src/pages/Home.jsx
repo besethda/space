@@ -1,6 +1,7 @@
 import { useState } from "react";
 import UseApi from "../hooks/useApi";
 import Display from "../components/Display";
+import Homepage from "../components/Homepage";
 
 const Home = ({photoDisplay, setPhotoDisplay}) => {
 
@@ -19,7 +20,7 @@ const Home = ({photoDisplay, setPhotoDisplay}) => {
         </div> 
         : <div className="" ></div>}
         <div className="z-3 absolute">
-          {loading && <div className="text-white px-3 py-2 max-w-48" >Loading nasa picture of the day...</div>}
+          {loading && <div className="text-gray-400 px-3 py-2 max-w-48" >Loading nasa picture of the day...</div>}
           <div className="text-white px-3 py-2 max-w-48">{data && `Picture of the day, ${data.date}`}</div>
           <div className="text-white px-3 py-0 max-w-48 font-bold">{data && data.title}</div>
           {explanation
@@ -30,6 +31,7 @@ const Home = ({photoDisplay, setPhotoDisplay}) => {
             : !loading && data && <div className="text-white px-3 py-2 w-fit hover:scale-105 hover:translate-x-1 duration-150 hover:font-semibold cursor-pointer" onClick={toggleReadMore}>Read More</div>
             }
         </div>
+        <Homepage />
         {photoDisplay && <Display photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay} defaultTitle={"Home"}/>}
     </div>
   );
