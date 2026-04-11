@@ -26,7 +26,7 @@ const Home = ({photoDisplay, setPhotoDisplay}) => {
           {explanation
             ? <div className="text-gray-300 font-semibold text-lg px-3 py-2 max-w-86">
                 <div className=" w-fit mb-2 hover:scale-105 hover:translate-x-1 duration-150 hover:font-semibold cursor-pointer" onClick={toggleReadMore}>Read less</div>
-                <div className="bg-cyan-950/40 hover:bg-cyan-950/80 cursor-default duration-200 rounded-3xl p-2 hover:shadow-lg hover:shadow-cyan-900/90">{data && data.explanation && data.explanation}</div>
+                <div className="box-border bg-cyan-950/40 border border-white/0 hover:bg-cyan-950/80 hover:border-cyan-300/30 cursor-default duration-200 rounded-3xl p-2 hover:shadow-lg hover:shadow-cyan-900/90">{data && data.explanation && data.explanation}</div>
               </div>
             : !loading && data && data.date && <div className="px-3 py-2 w-fit hover:scale-105 hover:translate-x-1 duration-150 hover:font-semibold cursor-pointer" onClick={toggleReadMore}>Read More</div>
             }
