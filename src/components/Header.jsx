@@ -15,7 +15,7 @@ const Header = ({setSearchData, photoDisplay, setPhotoDisplay}) => {
 
   return (
     <div className="h-0 w-full flex justify-center relative z-50">
-      <div className="box h-18 w-1/2 rounded-4xl shadow-md shadow-black pl-2.5 grid grid-cols-11 min-w-300 absolute top-3">
+      <div className="box h-14 md:h-18 sm:w-9/10 md:w-1/2 rounded-4xl shadow-md shadow-black pl-2.5 grid grid-cols-11 sm:min-w-80 md:min-w-200 absolute top-3">
         <div className="col-span-4 flex items-center w-full">
           <Logo size={55}/>
         </div>

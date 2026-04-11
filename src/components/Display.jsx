@@ -22,7 +22,7 @@ const Display = ({photoDisplay, setPhotoDisplay, defaultTitle}) => {
         <div className="flex justify-center pt-3 h-full relative overflow-hidden">
           <div className="w-fit h-fit flex flex-col justify-center items-center" >
             <img src={`${photoDisplay.links[0].href}`} className="max-h-4/5 min-h-1/5 max-w-3/5 object-contain" />
-            <div className="text-center absolute bottom-0 text-white bg-gray-800/70 p-4 rounded-t-3xl max-h-2/7 max-w-4/5">{photoDisplay.data[0].description}</div>
+            <div className="text-center absolute bottom-0 text-white bg-gray-800/70 p-4 rounded-t-3xl max-h-2/7 overflow-y-scroll max-w-4/5">{photoDisplay.data[0].description}</div>
           </div>
         </div>
       </div>}

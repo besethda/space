@@ -6,8 +6,8 @@ import Date from "../components/Date";
 
 const Asteroids = ({ photoDisplay, setPhotoDisplay }) => {
 
-  const [startDate, setStartDate] = useState('2015-09-07')
-  const [endDate, setEndDate] = useState('2015-09-08')
+  const [startDate, setStartDate] = useState('2026-06-12')
+  const [endDate, setEndDate] = useState('2026-06-19')
   const [data, setData, loading] = UseApi(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV`)
 
 
@@ -32,7 +32,7 @@ const Asteroids = ({ photoDisplay, setPhotoDisplay }) => {
         {keys && keys.map((e, index) => {
           return (
             <div key={`a${index}`} className="grid grid-cols-7 auto-rows-auto">
-              <div className="text-white col-span-7 border-b-cyan-400/10 border-b-2 my-1 text-xl px-2" >Date: {e}</div>
+              <div className="text-white col-span-7 border-b-cyan-400/10 border-b-2 my-1 text-xl px-2" >{e}</div>
               {data.near_earth_objects[e].map((f, i) => {
                 return (
                   <a className="px-2 grid grid-cols-7 bg-transparent col-span-8 rounded-lg hover:bg-cyan-200/10 border-b border-b-cyan-500/10 duration-150" href={`${f.nasa_jpl_url}`} key={i}>
