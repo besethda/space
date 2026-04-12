@@ -46,12 +46,12 @@ const Search = ({setSearchQuery, data, setData, setSearchData, photoDisplay, set
   }
 
   return (
-    <div className={`h-fit flex items-center relative rounded-3xl mr-3 ${searchDisplay ? "border-cyan-700/90 border" : ""}`}>
+    <div className={`h-fit flex items-center relative rounded-3xl mr-2 ${searchDisplay ? "border-cyan-700/90 border" : ""}`}>
       <div className={`w-fit h-fit flex items-center`}>
         <Close size={searchDisplay ? 26 : 0} close={closeButton}/>
-        <input ref={textBox} className="outline-0 duration-300 text-2xl p-0 m-0" style={{width: `${searchDisplay ? 165 : 0}px`}} placeholder="image search..."/>
+        <input ref={textBox} className={`outline-0 duration-300 ${searchDisplay ? "w-27 md:w-32" : "w-0"} txt p-0 m-0`} placeholder="image search..."/>
       </div>
-      <SearchIcon size={searchDisplay ? 42 : 55} click={searchButton} />
+      <SearchIcon size={searchDisplay ? 'small' : null} click={searchButton} />
       {!galleryView && <Dropdown data={data} createSearchData={createSearchData} searchDisplay={searchDisplay} photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay} setGalleryView={setGalleryView} textBox={textBox}/>}
     </div>
   );

@@ -5,13 +5,13 @@
   --color-primary: white;
 }
 
-@layer components {
+@layer base {
   .main {
-    @apply bg-linear-60 from-blue-950 to-mauve-950
+    @apply bg-linear-60 from-blue-950 to-mauve-950;
   }
 
   .mars {
-    @apply border shadow-[3px_6px_12px_6px] shadow-black border-amber-950 py-1 rounded-3xl w-fit px-4 my-3 bg-orange-500/20 cursor-default duration-150
+    @apply border mx-3 shadow-[3px_6px_12px_6px] shadow-black border-amber-950 py-1 rounded-3xl w-fit px-4 my-3 bg-orange-500/20 cursor-default duration-150;
   }
 
   .box {
@@ -19,27 +19,35 @@
   }
 
   .gridItem {
-    @apply flex justify-center items-center rounded-2xl border border-cyan-300/30 text-2xl p-6 duration-150
+    @apply flex justify-center text-lg md:text-xl lg:text-2xl items-center rounded-2xl border border-cyan-300/30 p-6 duration-150 overflow-hidden relative;
+  }
+
+  .gridMedia {
+    @apply min-w-full min-h-full object-cover opacity-30 grayscale-100 group-hover:opacity-85 group-hover:grayscale-0 duration-200 absolute;
+  }
+
+  .svgContainer {
+    @apply w-fit h-fit relative rounded-3xl;
+  }
+
+  .fieldHidden {
+    @apply collapse
   }
 
   .svg {
-    @apply rounded-3xl p-0.5 hover:bg-cyan-700/90 fill-white hover:shadow-md hover:shadow-cyan-300/20 cursor-pointer duration-200 active:inset-shadow-cyan-900 active:shadow-none active:bg-cyan-600/30;
+    @apply rounded-3xl lg:w-14 md:w-12 w-10 aspect-square p-0.5 hover:bg-cyan-700/90 fill-white hover:shadow-md hover:shadow-cyan-300/20 cursor-pointer duration-200 active:inset-shadow-cyan-900 active:shadow-none active:bg-cyan-600/30;
+  }
+
+  .miniSvg {
+    @apply w-7 md:w-8 rounded-3xl aspect-square p-0.5 hover:bg-cyan-700/90 fill-white hover:shadow-md hover:shadow-cyan-300/20 cursor-pointer duration-200 active:inset-shadow-cyan-900 active:shadow-none active:bg-cyan-600/30;
   }
 
   .btn {
     @apply text-primary font-primary bg-cyan-950/65 rounded hover:bg-cyan-900/20;
   }
 
-  .small {
-    @apply text-lg px-4 py-2;
-  }
-
-  .medium {
-    @apply text-xl px-5 py-2.5;
-  }
-
-  .large {
-    @apply text-3xl px-7 py-3;
+  .txt {
+    @apply text-sm text-white md:text-base lg:text-lg
   }
 }
 
@@ -47,4 +55,5 @@ html,
 body,
 #root {
   height: 100%;
+  overflow-x: hidden;
 }
