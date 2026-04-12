@@ -10,7 +10,7 @@ const Header = ({setSearchData, photoDisplay, setPhotoDisplay}) => {
 
   let width = window.innerWidth
   const [searchQuery, setSearchQuery] = useState("")
-  const [data, setData] = UseApi(searchQuery !== "" ? `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=20` : null)
+  const [data, setData] = UseApi(searchQuery !== "" ? `https://images-api.nasa.gov/search?q=${searchQuery}&media_type=image&page_size=20` : null, false)
   const location = useLocation()
   let title = location.state ? location.state.title : "Home"
 

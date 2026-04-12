@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const UseApi = (url) => {
+const UseApi = (url, needsKey=true) => {
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(false)
   const apiKey = import.meta.env.VITE_API_KEY
@@ -10,7 +10,7 @@ const UseApi = (url) => {
     const makeRequest = async () => {
       try {
         setLoading(true)
-        let response = await fetch(`${url}${apiKey}`)
+        let response = await fetch(`${url}${needsKey ? apiKey : ""}`)
         if(!response.ok) {
           const errorData = await response.json()
           throw new Error(errorData.error_message)
