@@ -5,7 +5,7 @@ import Homepage from "../components/Homepage";
 
 const Home = ({photoDisplay, setPhotoDisplay}) => {
 
-  const [data, setData, loading] = UseApi("https://api.nasa.gov/planetary/apod?api_key=B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV")
+  const [data, setData, loading] = UseApi("https://api.nasa.gov/planetary/apod?api_key=")
   const [explanation, setExplanation] = useState(false)
 
   const toggleReadMore = () => {

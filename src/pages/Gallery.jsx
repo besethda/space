@@ -21,7 +21,7 @@ const Gallery = ({searchData, setPhotoDisplay, photoDisplay}) => {
   }
 
   return (
-    <div className="flex flex-col grow main pt-26 px-3">
+    <div className="flex flex-col grow main pt-20 md:pt-26 px-3">
       <div className="flex flex-wrap justify-center max-h-[82vh] overflow-scroll">
         {searchData && searchData.collection.items.length ? searchData.collection.items.map((e, i)=> 
         <div onClick={()=> {setPhotoDisplay(e), changeTitle(e)}} className="flex max-h-36 md:max-h-54 m-3 flex-col justify-between cursor-pointer aspect-square p-2 border border-cyan-300/30 rounded-2xl bg-cyan-100/10 hover:bg-cyan-400/10 duration-300 overflow-hidden" key={i}>

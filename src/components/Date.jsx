@@ -8,7 +8,6 @@ const Date = ({setStartDate, startDate, setEndDate, endDate}) => {
 
   const setDates = () => {
     setStartDate(start.current.value)
-    console.log(start.current.value)
     setEndDate(end.current.value)
   }
 

@@ -9,7 +9,7 @@ const Asteroids = ({ photoDisplay, setPhotoDisplay }) => {
   let width = window.innerWidth
   const [startDate, setStartDate] = useState('2026-06-12')
   const [endDate, setEndDate] = useState('2026-06-19')
-  const [data, setData, loading] = UseApi(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=B3y4olgkjypsyU3FXPGigUAMkGrx4EIarZ87ezMV`)
+  const [data, setData, loading] = UseApi(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=`)
 
 
   const fields = ["Name", "Asteroid", "Max Diameter", "Closest approach Date", "Orbiting Body", "Miss Distance", "Travel Speed"]
@@ -18,10 +18,10 @@ const Asteroids = ({ photoDisplay, setPhotoDisplay }) => {
   return (
     <div className="flex grow main pt-18 md:pt-25 px-3 overflow-scroll">
       {photoDisplay && <Display photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay} defaultTitle={"Asteroids"} />}
-      {data && <div className="w-full box h-fit m-2 pb-3 px-2 relative shadow-black shadow-2xl rounded-3xl min-h-[30vh] max-h-[82vh] border border-cyan-300/30 overflow-y-scroll overflow-x-hidden bg-blend-multiply bg-cover" style={{ backgroundImage: `url('${getMediaURL('satellite.jpg')}')` }}>
+      <div className="w-full box h-fit m-2 pb-3 px-2 relative shadow-black shadow-2xl rounded-3xl min-h-[30vh] max-h-[82vh] border border-cyan-300/30 overflow-y-scroll overflow-x-hidden bg-blend-multiply bg-cover" style={{ backgroundImage: `url('${getMediaURL('satellite.jpg')}')` }}>
         <div className="sticky top-0 bg-black/90 ">
           <div className="flex flex-col md:flex-row justify-between">
-            {!loading && data.error ? <div className="txt font-semibold py-3 px-5">{data.error}</div>
+            {data && !loading && data.error ? <div className="txt font-semibold py-3 px-5">{data.error}</div>
               : !loading ? <div className="txt font-semibold py-3 px-5">{`${data && data.element_count} Objects Detected`}</div>
                 : <div className="txt font-semibold py-3 px-5">Loading satellite data...</div>}
             <Date startDate={startDate} setStartDate={setStartDate} endDate={endDate} setEndDate={setEndDate} />
@@ -52,7 +52,7 @@ const Asteroids = ({ photoDisplay, setPhotoDisplay }) => {
             </div>
           )
         })}
-      </div>}
+      </div>
     </div>
   );
 };

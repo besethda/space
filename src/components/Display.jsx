@@ -10,8 +10,6 @@ const Display = ({photoDisplay, setPhotoDisplay, defaultTitle}) => {
     updateUrl({title: defaultTitle})
   }
 
-  console.log(photoDisplay)
-
   return (
     <>
       {photoDisplay && <div className="flex flex-col bg-gray-600/80 absolute left-0 top-0 mt-24 ml-3 z-40 h-[calc(100%-160px)] w-[calc(100%-24px)] border border-cyan-300/30 rounded-2xl">

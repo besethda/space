@@ -48,7 +48,7 @@ const Search = ({setSearchQuery, data, setData, setSearchData, photoDisplay, set
   return (
     <div className={`h-fit flex items-center relative rounded-3xl mr-2 ${searchDisplay ? "border-cyan-700/90 border" : ""}`}>
       <div className={`w-fit h-fit flex items-center`}>
-        <Close size={searchDisplay ? 26 : 0} close={closeButton}/>
+        <Close size={searchDisplay ? 'small' : null} close={closeButton}/>
         <input ref={textBox} className={`outline-0 duration-300 ${searchDisplay ? "w-27 md:w-32" : "w-0"} txt p-0 m-0`} placeholder="image search..."/>
       </div>
       <SearchIcon size={searchDisplay ? 'small' : null} click={searchButton} />
