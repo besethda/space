@@ -15,7 +15,7 @@ const Home = ({photoDisplay, setPhotoDisplay}) => {
   return (
     <div className="flex h-full main">
         {!loading ? data && data.media_type && <div className="w-full h-full overflow-hidden relative">
-          {data.media_type === "video" ? <video src={`${data.url}`} typeof="video/mp4" autoPlay muted loop className="w-full h-full object-cover absolute z-0"/>
+          {data.media_type === "video" ? <video src={`${data.url}`} typeof="video/mp4" loop autoPlay playsInline disablePictureInPicture muted className="w-full h-full object-cover absolute z-0"/>
           : <img src={`${data.url}`} className="w-full h-full object-cover absolute"/>}
         </div> 
         : <div></div>}
