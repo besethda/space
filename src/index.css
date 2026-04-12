@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-primary: "Changa", serif;
+  --font-sans: "Google Sans", serif;
   --color-primary: white;
 }
 
@@ -43,7 +44,7 @@
   }
 
   .btn {
-    @apply text-primary font-primary bg-cyan-950/65 rounded hover:bg-cyan-900/20;
+    @apply text-primary font-sans bg-cyan-950/65 rounded hover:bg-cyan-900/20;
   }
 
   .txt {
@@ -56,4 +57,5 @@ body,
 #root {
   height: 100%;
   overflow-x: hidden;
+  font-family: var(--font-sans);
 }
