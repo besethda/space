@@ -16,7 +16,7 @@ const MarsData = () => {
     )
   } else if(attribute === "wind") {
     return (
-      <div className="flex relative md:top-0 top-[10vh] max-w-[90%] md:max-w-[68%] flex-wrap justify-center">
+      <div className="flex max-w-[90%] md:top-0 top-[10vh] md:max-w-[68%] flex-wrap justify-center">
         <div className="mars ">Avg Horizontal Wind Speed: {data && data[data.sol_keys[0]].HWS.av}</div>
         <div className="mars">Samples: {data && data[data.sol_keys[0]].HWS.ct}</div>
         <div className="mars">Smallest Sample: {data && data[data.sol_keys[0]].HWS.mn}</div>
