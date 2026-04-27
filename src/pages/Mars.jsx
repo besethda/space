@@ -1,6 +1,7 @@
 import Display from "../components/Display";
 import UseApi from "../hooks/useApi";
 import getMediaUrl from "../utils/functions.js"
+import { Link, Outlet } from "react-router-dom";
 
 const Mars = ({photoDisplay, setPhotoDisplay}) => {
 
@@ -20,15 +21,13 @@ const Mars = ({photoDisplay, setPhotoDisplay}) => {
             {loading 
               ? <div className="mars">Loading...</div>
               : data && <>
-              <div className="w-full md:px-[10%]">
-                <div className="mars">Avg Atmospheric Pressure: {data && data[data.sol_keys[0]].PRE.av}</div>
+              <div className="w-full flex justify-center md:px-[10%]">
+                <Link to={"/mars/temp"} className="mars hover:bg-amber-500/40 cursor-pointer">Atmospheric Temp</Link>
                 <div className="mars text-transform: capitalize">Season: {data && data[data.sol_keys[0]].Season}</div>
-              </div>
-              <div className="flex justify-between">
-                <div className="mars">Avg Atmospheric Temp: {data && data[data.sol_keys[0]].AT.av}</div>
-                <div className="mars">Avg Horizontal Wind Speed: {data && data[data.sol_keys[0]].HWS.av}</div>
+                <Link to={"/mars/wind"} className="mars hover:bg-amber-500/40 cursor-pointer">Wind Speed</Link>
               </div>
             </>}
+            <Outlet />
           </div>
         </div>
 

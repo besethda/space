@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
 import Home from './pages/Home'
 import Mars from './pages/Mars'
+import MarsData from './pages/MarsData'
 import Asteroids from './pages/Asteroids'
 import Layout from './pages/Layout'
 import Gallery from './pages/Gallery'
@@ -17,7 +18,9 @@ function App() {
         <Routes>
           <Route element={<Layout setSearchData={setSearchData} setPhotoDisplay={setPhotoDisplay}/>} >
             <Route path="/" element={<Home photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay}/>}/>
-            <Route path="/mars" element={<Mars photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay}/>}/>
+            <Route path="/mars" element={<Mars photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay}/>}>
+              <Route path="/mars/:attribute" element={<MarsData />}/>
+            </Route>
             <Route path="/asteroids" element={<Asteroids photoDisplay={photoDisplay} setPhotoDisplay={setPhotoDisplay}/>}/>
             <Route path="/gallery" element={<Gallery searchData={searchData} setPhotoDisplay={setPhotoDisplay} photoDisplay={photoDisplay}/>} />
           </Route>
