@@ -3,3 +3,9 @@ const getMediaURL = mediaName => {
 }
 
 export default getMediaURL
+
+export const getDateString = (daysFromToday = 0) => {
+  const date = new Date()
+  date.setDate(date.getDate() + daysFromToday)
+  return date.toISOString().split("T")[0]
+}
