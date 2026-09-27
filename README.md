@@ -24,18 +24,17 @@ NASA's image library, check the weather on Mars and track asteroids passing clos
 
 ## Tech stack
 
-- React 19 with Vite
+- React with Vite
 - React Router for pages and nested routes
 - Tailwind CSS
 - A custom `useApi` hook for fetching, loading and error states
-- NASA APIs: APOD, NeoWs, InSight and the NASA Image and Video Library
+- 3 different NASA apis
 
 ## What I learned
 
-- Working with several different APIs, each with its own response shape and error format
-- Writing a reusable fetch hook instead of repeating the same logic on every page
-- Nested routes with `<Outlet />` for the Mars sub-pages
-- Keeping API keys out of the repository with environment variables
+- How to handle really huge objects with complex layers
+- Making custom React hooks
+- More about error handling.
 
 ## Running locally
 
