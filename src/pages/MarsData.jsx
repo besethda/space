@@ -8,10 +8,10 @@ const MarsData = () => {
   if(attribute === "temp") {
     return (
       <div className="flex max-w-[90%] md:top-0 top-[10vh] md:max-w-[68%] flex-wrap justify-center">
-        <div className="mars">Largest Sample: {data && data[data.sol_keys[0]].PRE.av}</div>
-        <div className="mars">Samples: {data && data[data.sol_keys[0]].PRE.ct}</div>
-        <div className="mars">Smallest Sample: {data && data[data.sol_keys[0]].PRE.mn}</div>
-        <div className="mars">Largest Sample: {data && data[data.sol_keys[0]].PRE.mx}</div>
+        <div className="mars">Average Temp: {data && data[data.sol_keys[0]].AT.av}</div>
+        <div className="mars">Samples: {data && data[data.sol_keys[0]].AT.ct}</div>
+        <div className="mars">Smallest Sample: {data && data[data.sol_keys[0]].AT.mn}</div>
+        <div className="mars">Largest Sample: {data && data[data.sol_keys[0]].AT.mx}</div>
       </div>
     )
   } else if(attribute === "wind") {

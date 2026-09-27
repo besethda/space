@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Display from "../components/Display";
 import UseApi from "../hooks/useApi";
-import getMediaURL from "../utils/functions";
+import getMediaURL, { getDateString } from "../utils/functions";
 import Date from "../components/Date";
 
 const Asteroids = ({ photoDisplay, setPhotoDisplay }) => {
 
   let width = window.innerWidth
-  const [startDate, setStartDate] = useState('2026-06-12')
-  const [endDate, setEndDate] = useState('2026-06-19')
+  const [startDate, setStartDate] = useState(getDateString())
+  const [endDate, setEndDate] = useState(getDateString(6))
   const [data, setData, loading] = UseApi(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=`)
 
 
